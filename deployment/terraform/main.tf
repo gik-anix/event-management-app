@@ -1,11 +1,6 @@
-# Generate a random suffix for the S3 bucket to ensure global uniqueness
-resource "random_id" "bucket_suffix" {
-  byte_length = 4
-}
-
 # S3 bucket for the static website frontend assets
 resource "aws_s3_bucket" "frontend" {
-  bucket        = "${var.project_name}-${var.environment}-${random_id.bucket_suffix.hex}"
+  bucket        = "${var.project_name}-${var.environment}"
   force_destroy = true # Safe deletion for development and teardown
 }
 

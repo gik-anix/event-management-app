@@ -1,19 +1,19 @@
 variable "aws_region" {
   type        = string
   description = "The AWS region to deploy resources to."
-  default     = "us-east-1"
+  default     = "ap-south-1"
 }
 
 variable "project_name" {
   type        = string
   description = "Name of the project, used for naming resources."
-  default     = "event-mgmt-app"
+  default     = "roshan-event-mgmt-app"
 }
 
 variable "environment" {
   type        = string
   description = "Deployment environment (e.g., dev, staging, prod)."
-  default     = "dev"
+  default     = "prod"
 }
 
 variable "domain_name" {

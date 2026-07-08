@@ -5,9 +5,13 @@ terraform {
       source  = "hashicorp/aws"
       version = "~> 5.0"
     }
-    random = {
-      source  = "hashicorp/random"
-      version = "~> 3.0"
+  }
+
+  cloud {
+    organization = "roshan-personal"
+
+    workspaces {
+      name = "event-management-app-prod"
     }
   }
 }
@@ -15,3 +19,4 @@ terraform {
 provider "aws" {
   region = var.aws_region
 }
+
